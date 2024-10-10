@@ -1,6 +1,6 @@
 {
   "name": "@lykmapipo/cap-consumer",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "description": "Common Alert Protocol consumer",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -8,7 +8,7 @@
     "clean": "rimraf lib dist es umd logs",
     "prepare": "husky install && npm run build",
     "prebuild": "npm test && npm run clean",
-    "build": "rollup -c",
+    "build": "rollup -c && esbuild src/index.js --bundle --platform=node --target=node18 > lib/index.js",
     "lint": "eslint --fix --ext .js src/ test/ examples/ rollup.config.js",
     "prettier": "prettier --write '**/*.{md,json,yml,html}'",
     "pretest": "npm run lint",
@@ -94,7 +94,8 @@
     "rimraf": "^3.0.2",
     "rollup": "^2.77.2",
     "shelljs": "^0.8.5",
-    "websocket-extensions": "^0.1.4"
+    "websocket-extensions": "^0.1.4",
+    "esbuild": "^0.24.0"
   },
   "dependencies": {
     "@lykmapipo/cap-common": ">=0.2.9",
@@ -105,7 +106,6 @@
     "async": ">=3.2.4",
     "feedparser": ">=2.2.10",
     "lodash": ">=4.17.21",
-    "undici": "^6.20.0",
     "xml2js": ">=0.4.23"
   },
   "engines": {
