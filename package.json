@@ -96,7 +96,6 @@
     "shelljs": "^0.8.5",
     "websocket-extensions": "^0.1.4"
   },
-  "peerDependencies": {},
   "dependencies": {
     "@lykmapipo/cap-common": ">=0.2.9",
     "@lykmapipo/common": ">=0.44.5",
@@ -106,6 +105,7 @@
     "async": ">=3.2.4",
     "feedparser": ">=2.2.10",
     "lodash": ">=4.17.21",
+    "undici": "^6.20.0",
     "xml2js": ">=0.4.23"
   },
   "engines": {
